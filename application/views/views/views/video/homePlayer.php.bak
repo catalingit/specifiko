@@ -1,0 +1,63 @@
+<!-- Transcript, Vocabulary, Video Details -->
+<script>
+    $(function() {
+		$(".vocTip").tooltip();
+	})
+</script>
+
+
+<?php foreach($featVideo AS $videoInfo): ?>
+
+<div class="tab-wrap" id="transcript-wrap">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="active"><a href="#transcript" data-toggle="tab">Transcript</a></li>
+        <li><a href="#vocabulary" data-toggle="tab">Vocabulary</a></li>
+        <li><a href="#video-detail" data-toggle="tab">Video Details</a></li>
+    </ul>
+    
+    <div class="tab-content">
+        
+<<<<<<< HEAD
+        <div class="tab-pane active" id="transcript1">
+=======
+        <div class="tab-pane active" id="transcript">
+            
+>>>>>>> e151d8e1e27c706b749c95b6bbcb11c67341b026
+            <?php echo $transcript; ?>
+        </div>
+        
+        <!-- Vocabulary Words -->
+        <div class="tab-pane" id="vocabulary" style="width:30%">
+            
+            <?php
+                //Loop through the video's vocabulary terms
+                foreach($vocabulary AS $vTerms):
+            ?>
+                <a href="javascript:showWordDetail('/video/worddetail/<?=$vTerms['id']?>')"><?=$vTerms['vtext']?></a>
+            <?php endforeach; ?>
+        </div>
+        
+        <!-- Video Details -->
+        <div class="tab-pane" id="video-detail" style="width:50%">
+            
+            <p>
+                <strong>Title:</strong> <br />
+                <?=$videoInfo['title']?>
+            </p>
+            
+            <p style="width:40%">
+                <strong>Description:</strong> <br />
+                <?=$videoInfo['description']?>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Video Player -->
+<div class="video-wrap">
+    <div id="videoplayer-1375864898"></div>
+    <script src="http://eplayer.clipsyndicate.com/embed/player.js?auto_next=1&auto_start=1&cpt=1&div_id=videoplayer-1375864898&height=270&page_count=5&pf_id=1&show_title=0&va_id=4180175&width=320&windows=1" type="text/javascript"></script>
+</div>
+<?php endforeach; ?>
